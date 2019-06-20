@@ -1,1 +1,1 @@
-# Platzi
+# JavaScript 
