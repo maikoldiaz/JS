@@ -19,9 +19,9 @@ people.prototype.peopleTall = function (){
     }    
 }
 
-var peopleOne = new people('Camilo', 'Perez', 1.70);
-var peopleTwo = new people('Karito', 'Vargas', 1.52);
-var peopleThree = new people('Sandi', 'Ferrer', 1.75);
+var peopleOne = new people('Maikol', 'Diaz', 1.71);
+var peopleTwo = new people('Daniela', 'Riaño', 1.52);
+var peopleThree = new people('Juan', 'Alvares', 1.80);
 
 peopleOne.greet();
 peopleTwo.greet();
