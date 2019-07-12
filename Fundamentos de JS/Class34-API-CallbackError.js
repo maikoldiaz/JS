@@ -20,4 +20,4 @@ let getCharacter = (id) => {
 }
 getCharacter(1)
   .then(onSuccess)
-  .catch(onerror);
+  .catch(onError);
