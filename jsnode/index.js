@@ -11,7 +11,7 @@ require("./routes/views")(app);
 require("./routes/special")(app);
 require("./routes/api")(app);
 
-async function InitMongo(){
+async function initMongo(){
     const db = await mongo.connect();
     if (db){initExpress();}
 }
@@ -27,3 +27,4 @@ function closeApp(){
     mongo.disconnect().
             then(()=>process.exit(0));
 }
+initMongo();

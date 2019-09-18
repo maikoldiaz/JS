@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "fill-db": "node ./db/populate --fill",
+    "clean-db": "node ./db/populate --clear"
   },
   "keywords": [
     "nodejs",
@@ -19,6 +21,7 @@
     "glob": "^7.1.4",
     "mongodb": "^3.3.2",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "yargs": "^14.0.0"
   }
 }
