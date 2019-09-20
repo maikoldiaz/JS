@@ -1,6 +1,5 @@
 const mongo = require("./connect");
 const { DB_NAME } = require("../db/config");
-const films = require("../resources/films");
 const collection = "films";
 const ObjectID = require('mongodb').ObjectID
 
@@ -18,7 +17,21 @@ module.exports = {
     getFilmById: (_id) => {
         let objectId = new ObjectID(_id);
         const db = mongo.instance().db(DB_NAME);
-        const resp = db.collection(collection).find({_id:objectId}).toArray()
+        const resp = db.collection(collection).find({ _id: objectId }).toArray()
+        return resp;
+    },
+    deleteFilmById: (_id) => {
+        let objectId = new ObjectID(_id);
+        const db = mongo.instance().db(DB_NAME);
+        const resp = db.collection(collection).deleteOne({ _id: objectId });
+        return resp;
+    },
+    updateFilmById: (film) => {
+        let objectId = new ObjectID(film._id);
+        console.log(film._id);
+        const db = mongo.instance().db(DB_NAME);
+        const resp = db.collection(collection).updateOne({ _id: objectId },
+            { $set: { film } }, { upsert:true});
         return resp;
     }
 }
