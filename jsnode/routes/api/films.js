@@ -24,7 +24,7 @@ module.exports = (app) => {
         const id = req.params.id;
         if (id) {
             const resp = await deleteFilmById(id);
-            return res.json(resp);
+            return res.status(200).json(resp);
         }
         res.status(400).send({ reason: "No film sent." });
     });
