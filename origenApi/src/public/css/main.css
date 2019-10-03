@@ -1,0 +1,11 @@
+.juicyOrange{
+    background: #FF8008;
+    background: -webkit-linear-gradient(to right, #FFC837, #FF8008);
+    background: linear-gradient(to right, #FFC837, #FF8008);
+}
+.kyooTah{
+    background: #544a7d;
+    background: -webkit-linear-gradient(to right, #ffd452, #544a7d);
+    background: linear-gradient(to right, #ffd452, #544a7d);
+
+}
