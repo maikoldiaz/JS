@@ -12,12 +12,12 @@
             <h2>Nuevo Horario</h2>
         </div>
         <div class="card-body">
-            <form action="/schedule" method="POST">
+            <form action="/schedule/add" method="POST">
                 <div class="form-group">
-                    <input type="time" class="form-control" name="timeInit" autofocus>
+                    <input type="time" min="00:00" max="24:00" class="form-control" name="timeInit" autofocus>
                 </div>
                 <div class="form-group">
-                    <input type="time" class="form-control" name="timeEnd">
+                    <input type="time" min="00:00" max="24:00" class="form-control" name="timeEnd">
                 </div>
                 <div class="form-group">
                     <textarea name="description" class="form-control"></textarea>

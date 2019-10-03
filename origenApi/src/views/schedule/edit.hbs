@@ -1,0 +1,27 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h2>Editar horario</h2>
+        </div>
+        <div class="card-body">
+            <form action="/schedule/edit/{{schedule._id}}" method="POST">
+                <div class="form-group">
+                    <input type="time" min="00:00" max="24:00" 
+                    class="form-control" name="timeInit" autofocus value="{{schedule.timeInit}}">
+                </div>
+                <div class="form-group">
+                    <input type="time" min="00:00" max="24:00" class="form-control" name="timeEnd"
+                    value="{{schedule.timeEnd}}">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" class="form-control">{{schedule.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
