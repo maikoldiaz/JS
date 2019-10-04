@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Schedule = require("../models/Schedule");
 
-router.post("/schedule/add", async (req, res) => {
+
+// Helpers
+const { isAuthenticated } = require('../helpers/auth');
+
+router.post("/schedule/add", isAuthenticated,async (req, res) => {
     let errors = [];
     const scheduleInfo = {
         ...req.body
@@ -33,23 +37,23 @@ router.post("/schedule/add", async (req, res) => {
 })
 
 
-router.get("/schedule/add", async (req, res) => {
+router.get("/schedule/add", isAuthenticated, async (req, res) => {
     res.render("schedule/add")
 })
 
-router.get("/schedule", async (req, res) => {
+router.get("/schedule",isAuthenticated, async (req, res) => {
     const schedule = await Schedule.find();
     res.render("schedule/index", { schedule });
 })
 
-router.get("/schedule/edit/:id", async (req, res) => {
+router.get("/schedule/edit/:id", isAuthenticated, async (req, res) => {
     const schedule = await Schedule.findById(req.params.id);
     res.render("schedule/edit", {
         schedule
     })
 })
 
-router.post("/schedule/edit/:id", async (req, res) => {
+router.post("/schedule/edit/:id", isAuthenticated ,async (req, res) => {
     let errors = [];
     const scheduleInfo = {
         ...req.body
@@ -78,7 +82,7 @@ router.post("/schedule/edit/:id", async (req, res) => {
     }
 })
 
-router.get("/schedule/delete/:id", async (req, res) => {
+router.get("/schedule/delete/:id", isAuthenticated, async (req, res) => {
     await Schedule.findByIdAndDelete(req.params.id);
     req.flash("success_msg","Horario eliminado satisfactoriamente")
     res.redirect("/schedule")

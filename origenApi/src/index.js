@@ -9,7 +9,7 @@ const passport = require('passport');
 // Initializations
 const app = express();
 require('./database');
-// require('./config/passport');
+require('./config/passport');
 
 // settings
 app.set('port', process.env.PORT || 4000);
@@ -31,8 +31,8 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 // Global Variables
