@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-header>
+    <div mat-card-avatar>
+        <i mat-list-icon class="{{ question.icon }} icon"></i>
+    </div>
+    <mat-card-title>
+        <h2>
+            {{ question.title }}
+        </h2>
+    </mat-card-title>
+    <mat-card-subtitle>
+        <small>
+            maikol diaz - {{ question.createdAt | amLocale : 'es'| amTimeAgo}}
+        </small>
+    </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            {{ question.description}}
+        </p>
+    </mat-card-content>
+</mat-card>
+<div class="answer">
+    <h3>respuestas</h3>
+    <ul class="answer-list">
+        <li>
+            <h5>maikol diaz
+                <small>hace unos segundos</small>
+            </h5>
+            <p class="description">
+                yo tengo la respuesta
+            </p>
+        </li>
+    </ul>
+    <app-answer-form></app-answer-form>
+</div>
