@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "platzi-overflow"
+  "defaultProject": "platzi-overflow",
+  "cli": {
+    "analytics": "2ece9d49-3321-4eaf-9934-6d83e4cc03bd"
+  }
 }
