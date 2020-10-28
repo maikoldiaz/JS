@@ -1,0 +1,21 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <mat-form-field>
+        <input matInput formControlName="names" placeholder="Nombres" id="names">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="lastName" placeholder="Apellidos" id="lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="email" placeholder="Correo Electronico" id="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="password" placeholder="Contraseña" id="password" type="password">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="passwordConfirm" placeholder="Confirmacion de Contraseña" id="password" type="password">
+    </mat-form-field>
+    <span *ngIf="signupForm.errors?.mismatch" class="error">
+        Las contraseñas no coinciden
+      </span>
+    <button type="submit" mat-raised-button color="accent" class="btn-form">Inisiar Sesión</button>
+</form>

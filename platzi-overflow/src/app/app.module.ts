@@ -7,15 +7,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { QuestionDetailComponent } from './question/question-detail.component';
 import { MomentModule } from 'angular2-moment';
+
 import { AnswerFormComponent } from './answer/answer-form.component';
 import { SigninScreenComponent } from "./auth/signin-screen.component";
+import { SignupScreenComponet } from './auth/signup-screen.component';
+import { QuestionListComponent } from './question/question-list.component';
+import { QuestionFormComponent } from "./question/question-form.component";
+
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     QuestionDetailComponent,
     AnswerFormComponent,
-    SigninScreenComponent
+    SigninScreenComponent,
+    SignupScreenComponet,
+    QuestionListComponent,
+    QuestionFormComponent
   ],
   imports: [
     BrowserModule,

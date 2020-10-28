@@ -1,0 +1,18 @@
+.btn-form {
+    position: fixed;
+    bottom: 10px;
+    width: 90%;
+    z-index: 2;
+}
+
+i {
+    font-size: 48px;
+}
+
+small {
+    display: block;
+}
+
+.mat-radio-label {
+    display: none;
+}
