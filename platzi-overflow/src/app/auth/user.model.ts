@@ -3,10 +3,8 @@ export class User {
         public password : string,
         public email : string,
         public firstName?: string,
-        public lastName?: string
+        public lastName?: string,
+        public _id? : string,
+        public fullName = `${firstName} ${lastName}`,
     ) { }
-
-    fullName(){
-        return `${this.firstName} ${this.lastName}`;
-    }
 }

@@ -1,14 +1,21 @@
-import { Component } from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { Question } from './question.model'
+import { QuestionService } from "./question.service";
 @Component({
     selector: "app-question-list",
     templateUrl: "question-list.component.html",
-    styles : [`
-        i {
-            font-size : 45px
-        }
-    `]
+    styleUrls : ["question-list.component.css"],
+    providers : [QuestionService]
 })
-export class QuestionListComponent {
-    questions: Question[] = new Array(10).fill(new Question("Tengo muchas preguntas y no se como hacerlo para que eso se pueda", "Como hago x cosas", new Date(),"devicon-android-plain"));
+export class QuestionListComponent implements OnInit {
+    constructor(private questionService : QuestionService){}
+    
+    questions: Question[];
+    loading : boolean = true;
+
+    async ngOnInit() {
+        this.questions = await this.questionService
+            .getQuestions() as Question[];
+        this.loading = false;    
+    }
 }

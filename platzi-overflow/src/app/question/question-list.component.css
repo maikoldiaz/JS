@@ -1,0 +1,16 @@
+i {
+    font-size: 45px
+}
+
+.add-question {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 32px;
+}
+
+mat-spinner {
+    position: absolute;
+    bottom: 45%;
+    left: 35%;
+}

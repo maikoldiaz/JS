@@ -5,7 +5,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from "@angular/material"
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+import {MatMenuModule} from '@angular/material/menu';
 
 const modules = [
     MatToolbarModule,
@@ -15,7 +16,9 @@ const modules = [
     MatButtonModule,
     MatListModule,
     MatGridListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
 ]
 
 @NgModule({

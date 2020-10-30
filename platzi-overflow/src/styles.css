@@ -17,3 +17,9 @@ form {
     width: 90%;
     margin: 40px auto;
 }
+
+#au-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+}

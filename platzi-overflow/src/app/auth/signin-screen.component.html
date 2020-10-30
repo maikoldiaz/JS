@@ -6,4 +6,8 @@
         <input matInput formControlName="password" placeholder="Contraseña" id="password" type="password">
     </mat-form-field>
     <button type="submit" mat-raised-button color="accent" class="btn-form">Inisiar Sesión</button>
+    <p id="au-btn">
+        ¿Eres Nuevo?
+        <a mat-button color="primary" [routerLink]="['/signup']">Crear Usuario</a>
+    </p>
 </form>

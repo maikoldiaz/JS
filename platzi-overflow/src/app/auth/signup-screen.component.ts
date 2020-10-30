@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
 import { User } from './user.model';
 
 @Component({
@@ -9,6 +11,7 @@ import { User } from './user.model';
 })
 
 export class SignupScreenComponet {
+    constructor(private authService : AuthService,private router : Router){}
     signupForm = new FormGroup({
         names: new FormControl(null, [Validators.required]),
         lastName: new FormControl(null, [Validators.required]),
@@ -21,7 +24,12 @@ export class SignupScreenComponet {
         if (this.signupForm.valid) {
             const {names,lastName,email,password} = this.signupForm.value
             let user = new User(password,email,names,lastName)
-            console.info(user);
+            this.authService.signup(user)
+                    .subscribe((data : any) => {
+                        this.authService.loging(data);
+                        this.router.navigate(['/'])
+                    },
+                    (e) => console.log(e))
             form.resetForm();
             this.signupForm.reset();
         }
