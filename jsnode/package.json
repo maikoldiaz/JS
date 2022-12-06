@@ -16,8 +16,8 @@
   "author": "Maikol Diaz",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "glob": "^7.1.4",
     "jsdoc": "^3.6.3",
     "mongodb": "^3.3.2",
